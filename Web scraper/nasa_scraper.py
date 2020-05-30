@@ -10,3 +10,8 @@ def search_nasa(keywords):
     for article in articles:
         links.append(article.find('a')['href'])
     return links
+
+if __name__ == "__main__":
+    for link in search_nasa("crab nebula"):
+        print(link)
+        
