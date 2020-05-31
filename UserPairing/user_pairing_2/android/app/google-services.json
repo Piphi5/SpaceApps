@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "411552755797",
+    "firebase_url": "https://cogo-69507.firebaseio.com",
+    "project_id": "cogo-69507",
+    "storage_bucket": "cogo-69507.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411552755797:android:78b989ff3f3fc3f88564dc",
+        "android_client_info": {
+          "package_name": "com.flutter.firebase.cogo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411552755797-dr1dmjfo992c0cmus4g9nso532vrfetk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRyw2WuEwf6Q73cW6RWjhH84gWdbKlFwg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411552755797-dr1dmjfo992c0cmus4g9nso532vrfetk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "411552755797-adp9d05tcebvgr8bbru7csbmileoc4o8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutter.firebase.cogo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
