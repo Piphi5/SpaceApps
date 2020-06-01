@@ -14,8 +14,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-      home: TriviaGame(),
+      title: 'FlutterChat',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Colors.white,
+        scaffoldBackgroundColor: Color(0xff1F1F1F),
+        accentColor: Colors.white,
+        fontFamily: "OverpassRegular",
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: Authenticate(),
     );
   }
 }

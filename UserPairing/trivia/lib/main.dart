@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'COGO Trivia Demo',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -32,7 +32,13 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Container(
+        decoration: new BoxDecoration(
+          image: new DecorationImage(
+            image: new NetworkImage("https://apod.nasa.gov/apod/image/1708/NGC2442-HST-ESO-L.jpg"), fit: BoxFit.cover),
+          ),
+         child: MyHomePage(title: 'COGO Trivia Demo')
+      ),
     );
   }
 }
@@ -131,7 +137,9 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        backgroundColor: Colors.black,
       ),
+      backgroundColor: Colors.transparent,
       body: Center(
           child: FutureBuilder<Question>(
               future: currQuestion,
@@ -139,13 +147,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 if (snapshot.hasData) {
                   return Column(
                     children: <Widget>[
+                      SizedBox(
+                        height: 16,
+                      ),
                       Container(
                           height: 200,
                           width: 300,
                           child: Image.network(snapshot.data.imgUrl)),
-                      Text(snapshot.data.question),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      Text(snapshot.data.question,
+                      style: TextStyle(color: Colors.white, fontSize: 16),),
+                      SizedBox(
+                        height: 16,
+                      ),
                       Container(
-                        height: 250,
+                        height: 300,
                         child: ListView.separated(
                           padding: const EdgeInsets.all(8),
                           itemCount: snapshot.data.answerChoices.length,
@@ -163,11 +181,20 @@ class _MyHomePageState extends State<MyHomePage> {
                                 });
                               },
                               child: Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(18.0),
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                      color: Colors.white,
+                                      width: 2,
+                                    )),
                                 height: 50,
-                                color: Colors.blue,
                                 child: Center(
-                                    child: Text(
-                                        snapshot.data.answerChoices[index])),
+                                  child: Text(
+                                      snapshot.data.answerChoices[index],
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 16)),
+                                ),
                               ),
                             );
                           },

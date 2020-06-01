@@ -19,7 +19,7 @@ class HomePageState extends State<HomePage> {
 
     loadData().then((data) {
       setState(() {
-        this.data = data;
+        this.data = null;
         const oneSecond = const Duration(seconds: 2);
         new Timer.periodic(oneSecond, (Timer t) => setState((){
           loadData();
@@ -36,12 +36,10 @@ class HomePageState extends State<HomePage> {
         .getDocuments();
     var len = pendingGames.documents.length;
 
-
-      if (len == 0) {
-        this.data = len.toString();
-      } else {
-        this.data = null;
-      }
+    this.data = len.toString();
+    if (len != 0) {
+      this.data = null;
+    }
 
 
   }
