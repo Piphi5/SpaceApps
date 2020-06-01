@@ -5,9 +5,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+void main() {
+  runApp(MyApp());
+}
 
-
-class TriviaGame extends StatelessWidget {
+class MyApp extends StatelessWidget {
   // This widget is the root of your application.
 
   @override
@@ -30,13 +32,13 @@ class TriviaGame extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: TriviaPage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-class TriviaPage extends StatefulWidget {
- TriviaPage({Key key, this.title}) : super(key: key);
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -50,10 +52,10 @@ class TriviaPage extends StatefulWidget {
   final String title;
 
   @override
-  _TriviaPageState createState() => _TriviaPageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _TriviaPageState extends State<TriviaPage> {
+class _MyHomePageState extends State<MyHomePage> {
   Future<Question> currQuestion;
 
   Future<void> main() async {
@@ -154,7 +156,7 @@ class _TriviaPageState extends State<TriviaPage> {
                                   showAlertDialog(
                                       context,
                                       snapshot.data.answerChoices[index] ==
-                                          snapshot.data.answer
+                                              snapshot.data.answer
                                           ? "That's correct!"
                                           : "That's incorrect!");
                                   currQuestion = getQuestion();
@@ -170,7 +172,7 @@ class _TriviaPageState extends State<TriviaPage> {
                             );
                           },
                           separatorBuilder: (BuildContext context, int index) =>
-                          const Divider(),
+                              const Divider(),
                         ),
                       ),
                     ],
